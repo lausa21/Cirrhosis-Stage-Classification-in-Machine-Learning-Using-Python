@@ -6,24 +6,42 @@ The dataset is notably imbalanced, making this a challenging classification task
 ---
 
 ### 📊 Dataset Description
-The data for this project is the **Cirrhosis Prediction Dataset**, sourced from Kaggle. It contains records for 418 patients with 20 distinct attributes.
-* **Source:** **[Cirrhosis Prediction Dataset on Kaggle](https://www.kaggle.com/datasets/fedesoriano/cirrhosis-prediction-dataset)**
+* The dataset file is included in this directory. It contains records for 418 patients with 20 distinct attributes.
 * **Features:** The dataset includes a mix of numerical and categorical features like `N_Days` (duration of observation), `Age`, `Sex`, `Drug` administered, and various biochemical markers such as `Bilirubin`, `Cholesterol`, `Albumin`, and `Copper`.
 * **Target Variable:** The `Stage` column is the multi-class target, indicating the histologic stage of the disease (1, 2, 3, or 4).
 
 ---
 
 ### ⚙️ Model Training & Evaluation
-Two ensemble models were trained and evaluated: one without oversampling and one with SMOTE-balanced data.
-#### 1. Random Forest Classifier
-A strong baseline model that is effective with tabular data and less sensitive to scaling.
-#### 2. XGBoost Classifier
-A powerful gradient boosting algorithm known for its high predictive accuracy, especially in medical datasets. **XGBoost with SMOTE** was chosen as the final and best-performing model due to its ability to better handle the imbalanced classes.
+Two ensemble models (Random Forest Classifier and XGBoost Classifier) were trained and evaluated: one without oversampling and one with SMOTE-balanced data. The **XGBoost Classifier** trained on the oversampled (SMOTE) data was chosen as the final and best-performing model.
+
 #### Final Model Performance (Oversampled XGBoost)
-The classification report for the XGBoost model trained on the SMOTE-balanced data showed:
-* **Accuracy:** 58%. While modest, accuracy is not the primary metric for imbalanced datasets.
-* **Macro Avg Recall:** 57%. This indicates the model is reasonably effective at identifying patients across all stages.
-* **Class Performance:** The model performed best on Stage 4 (recall of 78%), likely because it is a more distinct and severe category. It struggled most with the minority classes (Stage 1 and 2), showing a trade-off between precision and recall.
+The classification report provides a detailed look at the model's performance:
+
+| Stage | Precision | Recall | F1-Score | Support |
+| :--- | :--- | :--- | :--- | :--- |
+| **1 (Stage 1)** | 0.40 | 0.33 | 0.36 | 6 |
+| **2 (Stage 2)** | 0.19 | 0.22 | 0.21 | 18 |
+| **3 (Stage 3)** | 0.52 | 0.54 | 0.53 | 28 |
+| **4 (Stage 4)** | 0.64 | 0.58 | 0.61 | 31 |
+| **Accuracy** | | | **0.47** | **83** |
+| **Macro Avg** | 0.44 | 0.42 | 0.43 | 83 |
+| **Weighted Avg** | 0.48 | 0.47 | 0.48 | 83 |
+
+### 🏆 Conclusion
+* Random Forest (after resampling and tuning) showed an overall improvement in precision, recall, and F1-score, with a more consistent and balanced performance across all classes.
+* Random Forest also has the highest score of F1-score weighted.
+* So, Random Forest after resampling and tuning is chosen as best model among others.
+
+---
+
+### 🎯 Top 5 Feature Importances
+Below are the top 5 most important features in predicting the stage of cirrhosis using the Random Forest model after oversampling and tuning.
+1.  **Prothrombin (13.27%):** Prothrombin is an essential indicator of liver function related to clotting. Low prothrombin levels can indicate severe liver damage, heavily influencing stage prediction.
+2.  **Platelets (12.67%):** Platelet count is often used to assess liver disease severity. In cirrhosis, platelet counts tend to be reduced, making it a critical marker for liver health.
+3.  **Albumin (12.24%):** Albumin plays a crucial role in predicting cirrhosis stages. Low albumin levels are commonly associated with liver dysfunction and help identify the severity of the condition.
+4.  **Age (10.82%):** Age is a significant factor, as the risk of liver disease and its progression often increases with age.
+5.  **Bilirubin (10.16%):** Bilirubin levels increase when the liver’s ability to process waste is impaired. High levels are an important marker of liver dysfunction or cirrhosis.
 
 ---
 
