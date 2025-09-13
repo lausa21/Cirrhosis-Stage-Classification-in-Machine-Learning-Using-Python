@@ -1,7 +1,7 @@
 # 🩺 Cirrhosis Stage Classification in Machine Learning Using Python
-This project focuses on building a multi-class classification model to predict the histologic stage of cirrhosis in patients. Developed as part of a Machine Learning course, the goal is to leverage patient data to accurately classify the disease into one of four stages.
+This project focuses on building a **multi-class classification model to predict the histologic stage of cirrhosis in patients**. Developed as part of a Machine Learning course, the goal is to leverage patient data to accurately classify the disease into one of four stages.
 
-The dataset is notably imbalanced, making this a challenging classification task. The project involves a thorough Exploratory Data Analysis (EDA), handling of missing values, and a comparison between two powerful ensemble models: **Random Forest** and **XGBoost**. Additionally, the impact of oversampling with **SMOTE** is investigated to address the class imbalance.
+The dataset is notably imbalanced, making this a challenging classification task. The project involves a thorough Exploratory Data Analysis (EDA), handling of missing values, and a comparison between two powerful ensemble models: Random Forest and XGBoost. Additionally, the impact of oversampling with SMOTE is investigated to address the class imbalance.
 
 ---
 
@@ -25,3 +25,18 @@ The classification report for the XGBoost model trained on the SMOTE-balanced da
 * **Macro Avg Recall:** 57%. This indicates the model is reasonably effective at identifying patients across all stages.
 * **Class Performance:** The model performed best on Stage 4 (recall of 78%), likely because it is a more distinct and severe category. It struggled most with the minority classes (Stage 1 and 2), showing a trade-off between precision and recall.
 
+---
+
+### 🛠️ Concepts
+* **Language:** Python
+* **Core Concepts:**
+    * Exploratory Data Analysis (EDA) & Data Pre-Processing
+    * Feature Encoding and Scaling
+    * Oversampling using SMOTE
+    * Model Training (Random Forest & XGBoost)
+    * Evaluation (Confusion Matrix, Classification Report)
+
+---
+
+ ### 🖋 Author
+Laurel Evelina Widjaja
