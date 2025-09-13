@@ -1,5 +1,5 @@
 # 🩺 Cirrhosis Stage Classification in Machine Learning Using Python
-This project focuses on building a **multi-class classification model to predict the histologic stage of cirrhosis in patients**. Developed as part of a Machine Learning course, the goal is to leverage patient data to accurately classify the disease into one of four stages.
+This project focuses on building a **multi-class classification model to predict the histologic stage of cirrhosis in patients**. Developed as part of a Machine Learning course in my 3rd-semester, the goal is to leverage patient data to accurately classify the disease into one of four stages.
 
 The dataset is notably imbalanced, making this a challenging classification task. The project involves a thorough Exploratory Data Analysis (EDA), handling of missing values, and a comparison between two powerful ensemble models: Random Forest and XGBoost. Additionally, the impact of oversampling with SMOTE is investigated to address the class imbalance.
 
