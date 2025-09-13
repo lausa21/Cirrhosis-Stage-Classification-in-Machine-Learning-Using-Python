@@ -13,20 +13,9 @@ The dataset is notably imbalanced, making this a challenging classification task
 ---
 
 ### ⚙️ Model Training & Evaluation
-Two ensemble models (Random Forest Classifier and XGBoost Classifier) were trained and evaluated: one without oversampling and one with SMOTE-balanced data. The **XGBoost Classifier** trained on the oversampled (SMOTE) data was chosen as the final and best-performing model.
+Two ensemble models (Random Forest Classifier and XGBoost Classifier) were trained and evaluated: one without oversampling and one with SMOTE-balanced data. The **Random Forest Classifier** trained on the oversampled (SMOTE) data was chosen as the final and best-performing model.
 
-#### Final Model Performance (Oversampled XGBoost)
-The classification report provides a detailed look at the model's performance:
-
-| Stage | Precision | Recall | F1-Score | Support |
-| :--- | :--- | :--- | :--- | :--- |
-| **1 (Stage 1)** | 0.40 | 0.33 | 0.36 | 6 |
-| **2 (Stage 2)** | 0.19 | 0.22 | 0.21 | 18 |
-| **3 (Stage 3)** | 0.52 | 0.54 | 0.53 | 28 |
-| **4 (Stage 4)** | 0.64 | 0.58 | 0.61 | 31 |
-| **Accuracy** | | | **0.47** | **83** |
-| **Macro Avg** | 0.44 | 0.42 | 0.43 | 83 |
-| **Weighted Avg** | 0.48 | 0.47 | 0.48 | 83 |
+---
 
 ### 🏆 Conclusion
 * Random Forest (after resampling and tuning) showed an overall improvement in precision, recall, and F1-score, with a more consistent and balanced performance across all classes.
@@ -51,8 +40,9 @@ Below are the top 5 most important features in predicting the stage of cirrhosis
     * Exploratory Data Analysis (EDA) & Data Pre-Processing
     * Feature Encoding and Scaling
     * Oversampling using SMOTE
-    * Model Training (Random Forest & XGBoost)
+    * Model Training (Random Forest Classifier & XGBoost Classifier)
     * Evaluation (Confusion Matrix, Classification Report)
+    * Feature Importance
 
 ---
 
