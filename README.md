@@ -42,6 +42,7 @@ Below are the top 5 most important features in predicting the stage of cirrhosis
     * Oversampling using SMOTE
     * Model Training (Random Forest Classifier & XGBoost Classifier)
     * Evaluation (Confusion Matrix, Classification Report)
+    * Fine-Tuning using GridSearchCV
     * Feature Importance
 
 ---
